@@ -97,16 +97,15 @@ public class MainActivity extends AppCompatActivity {
     private void initEvents() {
         // The sample method of adding a text watermark.
         btnAddText.setOnClickListener((View v) -> {
-            WatermarkText watermarkText = new WatermarkText(editText.getText().toString())
-                    .setPositionX(0.5)
-                    .setPositionY(0.5)
+          String text = "888888888888888888888888888888888888888888888888888888888888888888888888888888888888";
+            WatermarkText watermarkText = new WatermarkText(text)
+                    .setPositionX(0.0)
+                    .setPositionY(0.0)
                     .setTextAlpha(255)
-                    .setTextColor(Color.WHITE)
-                    .setTextFont(R.font.champagne)
-                    .setTextShadow(0.1f, 5, 5, Color.BLUE);
+                    .setTextColor(Color.BLACK);
 
             WatermarkBuilder.create(this, backgroundView)
-                    .setTileMode(true)
+                    .setTileMode(false)
                     .loadWatermarkText(watermarkText)
                     .getWatermark()
                     .setToImageView(backgroundView);

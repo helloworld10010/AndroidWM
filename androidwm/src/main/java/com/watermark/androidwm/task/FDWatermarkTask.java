@@ -63,7 +63,7 @@ public class FDWatermarkTask extends AsyncTask<AsyncTaskParams, Void, Bitmap> {
         }
 
         if (watermarkText != null) {
-            watermarkBitmap = textAsBitmap(context, watermarkText);
+            watermarkBitmap = textAsBitmap(context,0, watermarkText);
         }
 
         if (watermarkBitmap == null) {

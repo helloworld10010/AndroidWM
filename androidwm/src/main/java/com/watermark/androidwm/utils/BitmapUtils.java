@@ -57,7 +57,7 @@ public class BitmapUtils {
      *
      * @return {@link Bitmap} the bitmap return.
      */
-    public static Bitmap textAsBitmap(Context context, WatermarkText watermarkText) {
+    public static Bitmap textAsBitmap(Context context, int wrapWidth,WatermarkText watermarkText) {
         TextPaint watermarkPaint = new TextPaint();
         watermarkPaint.setColor(watermarkText.getTextColor());
         watermarkPaint.setStyle(watermarkText.getTextStyle());
@@ -101,7 +101,7 @@ public class BitmapUtils {
         }
         StaticLayout staticLayout = new StaticLayout(watermarkText.getText(),
                 0, watermarkText.getText().length(),
-                watermarkPaint, mTextMaxWidth, android.text.Layout.Alignment.ALIGN_NORMAL, 2.0f,
+                watermarkPaint, wrapWidth, android.text.Layout.Alignment.ALIGN_NORMAL, 2.0f,
                 2.0f, false);
 
         int lineCount = staticLayout.getLineCount();
